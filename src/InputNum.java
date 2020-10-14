@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class InputNum {
 
     ArrayList <String> nums= new ArrayList<>();
+    ArrayList <String> inputFile;
     public InputNum()
     {
         nums.add("One");
@@ -29,17 +30,17 @@ public class InputNum {
         nums.add("Twenty-One");
         nums.add("Twenty-Two");
         nums.add("Twenty-Three");
-        nums.add("Twenty-four");
-        nums.add("Twenty-five");
-//        nums.add("Twenty-six");
+        nums.add("Twenty-Four");
+        nums.add("Twenty-Five");
+        nums.add("Twenty-Six");
 
 
     }
     void run()
     {
-        int sz= nums.size();
+        int sz= inputFile.size();
         Scanner in =  new Scanner(System.in);
-        System.out.println("How many columns");
+        System.out.println("How many columns?");
         int col= in.nextInt();
         int listN= (sz/col);
         if(sz%col!=0)
@@ -52,18 +53,22 @@ public class InputNum {
             int z=x;
             for(int y=0; y<col;y++)
             {
-                if(z>=nums.size()){break;}
-                    String input = nums.get(z);
+                if(z>= inputFile.size()){break;}
+                    String input = inputFile.get(z);
 
                 System.out.printf(input+"%-5s"," ");
                z=z+listN;
             }
             System.out.println();
         }
-//        for (var name: numbers.keySet()){
-//            String key = name;
-//            int value = numbers.get(name);
-//            System.out.print(key + " " );
-//        }
+
+    }
+    void addList(ArrayList<String> input)
+    {
+        inputFile = input;
+    }
+    void print(int listN, int z)
+    {
+        inputFile.stream().filter(name -> )
     }
 }
